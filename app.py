@@ -33,4 +33,4 @@ def home():
     return render_template("inicio.html", nombre=nombre, apellido=apellido)
 
 if __name__ == '__main__':
-    app.run(port=8000)
+    app.run()
