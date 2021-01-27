@@ -3,6 +3,10 @@ from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 from dotenv import load_dotenv
 
+# User Config
+nombre = ""
+apellido = ""
+
 def create_app():
 
     load_dotenv()
@@ -12,9 +16,6 @@ def create_app():
     client = MongoClient(os.environ.get("MONGODB_URI"))
     db = client.test
     users = db.users
-    # User Config
-    nombre = ""
-    apellido = ""
 
     @app.route("/", methods=["GET", "POST"])
     def index():
