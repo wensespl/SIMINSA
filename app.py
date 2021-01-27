@@ -33,6 +33,8 @@ def create_app():
 
     @app.route("/home/")
     def home():
+        global nombre
+        global apellido
         return render_template("inicio.html", nombre=nombre, apellido=apellido)
 
     return app
