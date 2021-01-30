@@ -22,14 +22,14 @@ def create_app():
         global nombre
         global apellido
         if request.method == "POST":
-            user = request.form.get("usuario")
-            dni = request.form.get("dni_number")
+            user = request.form['usuario']
+            dni = request.form['contraseña']
             if(users.find_one({"nombre": user, "DNI": dni})):
                 res = users.find_one({"nombre": user, "DNI": dni})
                 nombre = res["nombre"]
                 apellido = res["apellido"]
                 return redirect("home/")
-        return render_template("login.html")
+        return render_template("index.html")
 
     @app.route("/home/")
     def home():
