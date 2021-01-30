@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="{{url_for('static', filename='css/estiloIndex.css')}}">
-		<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Noto+Sans+JP:wght@500&family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
 
 </head>
@@ -13,36 +13,35 @@
 	<section>
 		<div class="imgBx">
 			<div class="mySlides fade">
- 				<img src="images/registra.jpg">
+				<img src="{{url_for('static', filename='images/registra.jpg')}}">
 			</div>
 			<div class="mySlides fade">
-  				<img src="images/monitoriza.jpg">
+				<img src="{{url_for('static', filename='images/monitoriza.jpg')}}">
 			</div>
 			<div class="mySlides fade">
-  				<img src="images/previene.jpg">
+				<img src="{{url_for('static', filename='images/previene.jpg')}}">
 			</div>
 		</div>
 		<div>
-  			<span class="dot"></span> 
-  			<span class="dot"></span> 
-  			<span class="dot"></span> 
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
 		</div>
 		<script type="text/javascript" src="{{url_for('static', filename='javaScript/jsIndex.js')}}"></script>
 		<div class="contentBx">
-			
 			<div class="formBx">
 				<div class="logo">
-					<img src="images/logo.png">
+					<img src="{{url_for('static', filename='images/logoIndex.jpeg')}}">
 				</div>
 				<h2>INICIO DE SESIÓN</h2>
-				<form>
+				<form class="form" method="POST">
 					<div class="inputBx">
 						<span>Usuario</span>
-						<input type="text" name="" placeholder="User" required="">
+						<input type="text" name="usuario" placeholder="User" required="">
 					</div>
 					<div class="inputBx">
 						<span>Contraseña</span>
-						<input type="password" name="" placeholder="********" required="">
+						<input type="password" name="contraseña" placeholder="********" required="">
 					</div>
 					<div class="inputBx">
 						<input type="submit" value="Ingresar" name="">
