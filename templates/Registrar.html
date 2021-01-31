@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SIMINSA</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/estiloRegistrar.css')}}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Noto+Sans+JP:wght@500&family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<div class="grid">
+		<header class="header">
+			<div class="logo1">
+				<img src="{{url_for('static', filename='images/logo.png')}}">
+			</div>
+			<div class="logo2">
+				<h2>gob.pe</h2>
+			</div>
+			<div class="logo3">
+				<h2>SIMINSA</h2>
+			</div>
+			
+			<div class="usuario">
+				<h2>Usuario</h2>
+			</div>
+		</header>
+
+	<div class="l-navbar" id="navbar">
+            <nav class="nav">
+                <div>
+                    <div class="nav__brand">
+                        <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                        <h2>SIMINSA</h2>
+                    </div>
+                    <div class="nav__list">
+						<div  class="nav__link collapse">
+                            <img src="{{url_for('static', filename='images/icono1.png')}}">
+                            <span class="nav__name">Registrar</span>
+
+                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+
+                            <ul class="collapse__menu">
+                                <a href="#" class="collapse__sublink">Datos</a>
+                                <a href="#" class="collapse__sublink">Síntomas</a>
+                                <a href="#" class="collapse__sublink">Inmunizaciones</a>
+                            </ul>
+                        </div>
+                        <div class="nav__link collapse">
+                           
+                            <img src="{{url_for('static', filename='images/icono2.png')}}">
+
+                            <span class="nav__name">Monitorear</span>
+
+                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+
+                            <ul class="collapse__menu">
+                                <a href="#" class="collapse__sublink">Buscar</a>
+                                <a href="#" class="collapse__sublink">Datos</a>
+                                <a href="#" class="collapse__sublink">Reporte</a>
+                            </ul>
+                        </div>
+                        <div href="#" class="nav__link">
+
+                        	<img src="{{url_for('static', filename='images/icono3.png)}}">
+                          
+                            <span class="nav__name">Prevenir</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div href="#" class="nav__link">
+                    <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                    <span class="nav__name">Cerrar sesión</span>
+                </div>
+            </nav>
+        </div>
+        <!-- ===== IONICONS ===== -->
+        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+        
+        <!-- archivo java script -->
+        <script src="{{url_for('static', filename='javaScript/jsRegistrar.js')}}"></script>
+
+		<main class="main">
+			<div class="titulo">
+				<h1>REGISTRAR</h1>
+			</div>
+			<div class="subtitulo1">
+					<h2>Buscar paciente</h2>
+			</div>
+			<div class="buscar">
+				<form class="form" action="javascript:void();">	
+					<div class="box dni">
+						<label>DNI</label>
+						<input type="text" name="dni" required="" pattern="[0-9]{8}" title="Debe poner 8 números">
+					</div>
+					<div class="boxb buscarb" >
+						<button type="submit">buscar</button>	
+					</div>
+				</form>
+			</div>
+			<div class="subtitulo2">
+					<h2>Datos del paciente</h2>
+			</div>
+			<div class="datos">
+				<form class="form" action="javascript:void();">
+					
+					<div class="box dni">
+						<label></label>DNI</label>
+						<input type="text" name="dni" required="" pattern="[0-9]{8}" title="Debe poner 8 números">
+					</div>
+
+					<div class="box nombre1">
+						<label>Primer nombre</label>
+						<input type="text" name="nombre1" required="">	
+					</div>
+					<div class="box nombre2">
+						<label>Segundo nombre</label>
+						<input type="text" name="nombre2" required="">	
+					</div>
+					<div class="box apellido1">
+						<label>Apellido paterno</label>	
+						<input type="text" name="apellido1" required="">
+					</div>
+					<div class="box apellido2">
+						<label>Apellido materno</label>	
+						<input type="text" name="apellido2" required="">	
+					</div>
+					<div class="box genero">
+						<label>Género</label>	
+
+						<select class="select genero" name="option">
+    						<option value="" disabled selected><!-- Choose your option --></option>
+   							<option value="1">Masculino</option>
+    						<option value="2">Femenino</option>
+    					</select>	
+					</div>
+					<div class="box telefono">
+						<label>Teléfono</label>	
+						<input type="texto" name="telefono" required="" pattern="[0-9]{9}" title="Debe poner 9 números">						
+					</div>
+					<div class="box fecha">
+							<label>Fecha de nacimiento</label>
+						<input type="date" name="fecha" required="">						
+					</div>
+
+
+
+					<div class="box provincia">
+						
+						<label>Departamento</label>
+						
+						<select class="select departamento" name="option">
+    						<option value="" disabled selected><!-- Choose your option --></option>
+   							<option value="1">Amazonas</option>
+    						<option value="2">Ancash</option>
+    						<option value="3">Apurímac</option>
+    						<option value="4">Arequipa</option>
+    						<option value="5">Ayacucho</option>
+    						<option value="6">Cajamarca</option>
+    						<option value="7">Callao</option>
+    						<option value="8">Cusco</option>
+    						<option value="9">Huancavelica</option>
+    						<option value="10">Huánuco</option>
+    						<option value="11">Ica</option>
+    						<option value="12">Junín</option>
+    						<option value="13">La libertad</option>
+    						<option value="14">Lambayeque</option>
+    						<option value="15">Lima</option>
+    						<option value="16">Loreto</option>
+    						<option value="17">Madre de Dios</option>
+    						<option value="18">Moquegua</option>
+    						<option value="19">Pasco</option>
+    						<option value="20">Piura</option>
+    						<option value="21">Puno</option>
+    						<option value="22">San martín</option>
+    						<option value="23">Tacna</option>
+    						<option value="24">Tumbes</option>
+    						<option value="25">Ucayalli</option>
+  						</select>	
+					</div>
+					<div class="box distrito">
+						<label>Distrito</label>	
+						<input type="text" name="distrito" required="">
+					</div>
+					<div class="box calle">
+						<label>Calle</label>
+						<input type="text" name="calle" required="">
+					</div>
+					<div class="boxb registrardato">
+						<button type="submit">Registrar</button>
+					</div>
+				</form>
+			</div>
+			<div class="subtitulo3">
+					<h2>Síntomas</h2>
+			</div>
+			<div class="sintomas">
+				
+				<form class="form">
+					<div class="box op1">
+						<input type="checkbox" name="">
+						<label>Dificultad para respirar o sensación de falta de aire.</label>
+					</div>
+					<div class="box op2">
+						<input type="checkbox" name="">
+						<label>Dolor o presión en el pecho.</label>
+					</div>
+					<div class="box op3">
+						<input type="checkbox" name="">
+						<label>Cansancio.</label>
+					</div>
+					<div class="box op4">
+						<input type="checkbox" name="">
+						<label>Incapacidad para hablar o moverse.</label>
+					</div>
+					<div class="box op5">
+						<input type="checkbox" name="">
+						<label>Pérdida del sentido del olfato o del gusto.</label>
+					</div>
+					<div class="box op6">
+						<input type="checkbox" name="">
+						<label>Fiebre.</label>
+					</div>
+					<div class="box op7">
+						<input type="checkbox" name="">
+						<label>Tos seca.</label>
+					</div>
+					<div class="box op8">
+						<textarea name="otros" placeholder="Otros"></textarea>
+						
+					</div>
+					<div class="boxb registrardato">
+						<button type="submit">Registrar</button>
+					</div>
+				</form>
+			</div>
+			<div class="subtitulo4">
+			<h2>Inmunizaciones</h2>
+			</div>
+			<div class="inmunizaciones">
+				
+				<form class="form">
+					<div class="box titulo1">
+						<h3>Primera dosis</h3>
+					</div>
+					<div class="box estado1">
+						<label>Estado</label>	
+						<select class="select estado1" name="option">
+    						<option value="" disabled selected><!-- Choose your option --></option>
+   							<option value="1">Recibida</option>
+    						<option value="2">No recibida</option>
+    						<option value="3">Programada</option>
+    					</select>
+					</div>
+					<div class="box fecha1">
+						<label>Fecha</label>	
+						<input type="date" name="fecha">
+					</div>
+					<div class="box vacuna1">
+						<label>Vacuna</label>	
+						<select class="select vacuna1" name="option">
+    						<option value="" disabled selected><!-- Choose your option --></option>
+   							<option value="1">Sinpharm</option>
+    						<option value="2">Pfizer</option>
+    					</select>
+					</div>
+					<div class="box titulo2">
+						<h3>Segunda dosis</h3>
+					</div>
+					<div class="box estado2">
+						<label>Estado</label>	
+						<select class="select estado2" name="option">
+    						<option value="" disabled selected><!-- Choose your option --></option>
+   							<option value="1">Recibida</option>
+    						<option value="2">No recibida</option>
+    						<option value="3">Programada</option>
+    					</select>
+					</div>
+					<div class="box fecha2">
+						<label>Fecha</label>	
+						<input type="date" name="fecha">
+					</div>
+					<div class="box vacuna2">
+						<label>Vacuna</label>	
+						<select class="select vacuna2" name="option">
+    						<option value="" disabled selected><!-- Choose your option --></option>
+   							<option value="1">Sinpharm</option>
+    						<option value="2">Pfizer</option>
+    					</select>
+					</div>
+					<div class="boxb registrarvacuna">
+						<button type="submit">Registrar</button>
+					</div>
+				</form>
+			</div>		
+		</main>
+	</div>
+</body>
+</html>

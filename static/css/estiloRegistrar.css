@@ -1,0 +1,470 @@
+/*===== VARIABLES CSS =====*/
+:root{
+  --nav-width: 40px;
+
+  /*===== Colores =====*/
+  --first-color: #0C5DF4;
+  --bg-color: #12192C;
+  --sub-color: #B6CEFC;
+  --white-color: #FFF;
+  
+  /*===== Fuente y tipografia =====*/
+  --normal-font-size: 1rem;
+  --small-font-size: .875rem;
+  
+  /*===== z index =====*/
+  --z-fixed: 100;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+body{
+	background: #dfe4ea;
+}
+
+/*Se reparte las areas del grid que contiene toda la pagina*/
+.grid{
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	display: grid;
+	grid-template-columns: minmax(70px,75px) 94.8%;
+	grid-template-rows: repeat(2,auto);
+	grid-template-areas: "header header"
+						"sidebar main";
+}
+
+/*El header contiene el logo y el nombre del usuario con fondo de color rojo*/
+.grid .header{
+	width: 100%;
+	z-index: 400;
+	position: fixed;
+	grid-area: header;
+	background: #C80000;
+	height: 60px;
+	display: grid;
+	grid-template-columns: minmax(10px,20px) minmax(40px,46px) 100px minmax(0px,130px) 1fr 20px minmax(20%,30%);
+}
+
+/*Centrar los elementos*/
+.grid .header .logo1,
+.grid .header .logo2,
+.grid .header .logo3,
+.grid .header .usuario{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*Esto es para escudo del perú*/
+.grid .header .logo1{
+	grid-column: 2/3;
+}
+
+
+.grid .header .logo1 img{
+	width: 46px;
+	min-width: 40px;
+}
+
+/*Esto es para gob.pe*/
+.grid .header .logo2{
+	margin: 10px;
+	padding-right: 10px;
+	border-right: 2px solid;
+}
+
+/*Esto es para SIMINSA*/
+.grid .header .logo3 h2{
+	font-size: 30px;
+}
+
+/*Esto es para usuario*/
+.grid .header .usuario{
+	grid-column: 7/-1;
+	background:#D63031; 
+}
+
+.grid .header .usuario:hover{
+	background-color: #DB3A42;
+}
+
+/*===== l NAV =====*/
+.l-navbar{
+	grid-area: sidebar;
+	position: -webkit-sticky;
+  	position: sticky;
+  	top: 0;
+  	width: 40px;
+  	height: 82vh;
+  	background-color: var(--bg-color);
+  	color: var(--white-color);
+  	padding: 5rem 1rem 2rem;
+  	transition: .5s;
+  	z-index: var(--z-fixed);
+  	border-radius: 0 0 30px;
+}
+
+/*===== NAV =====*/
+.nav{
+	position: relative;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.nav__brand{
+  display: grid;
+  grid-template-columns: max-content max-content;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.nav__toggle{
+  font-size: 1.25rem;
+  padding: .75rem;
+  cursor: pointer;
+}
+
+.nav__logo{
+  color: var(--white-color);
+  font-weight: 600;
+}
+
+.nav__link{
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 2rem;
+  padding: .75rem;
+  color: var(--white-color);
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.showCollapse a{
+  text-decoration: none;
+}
+
+.nav__link:hover{
+  background-color: var(--first-color);
+}
+
+.nav__icon{
+  font-size: 1.25rem;
+}
+.nav__name{
+  font-size: var(--small-font-size);
+}
+
+/*Expander menu*/
+.expander{
+  width: calc(var(--nav-width) + 9.25rem);
+}
+
+/*Active links menu*/
+.active{
+  background-color: var(--first-color);
+}
+
+/*===== COLLAPSE =====*/
+
+.collapse{
+	padding: 0px 10px;
+}
+
+.collapse{
+  grid-template-columns: 20px max-content 1fr;
+}
+.collapse__link{
+	display: flex;
+  justify-self: flex-end;
+  align-items: center;
+  transition: .5s;
+  padding:15px;
+
+}
+
+.collapse__menu{
+  display: none;
+  padding: .75rem 2.25rem;
+}
+.collapse__sublink{
+  color: var(--sub-color);
+  font-size: var(--small-font-size);
+}
+
+.collapse__sublink:hover{
+  color: var(--white-color);
+}
+
+/*Show collapse*/
+.showCollapse{
+  display: block;
+}
+
+/*Rotacion icono*/
+.rotate{
+  transform: rotate(180deg);
+}
+
+/*Se hacen 10 filas con grid*/
+.grid .main{
+	grid-area: main;
+	display: grid;
+	grid-template-columns: minmax(200px,100%);
+	grid-template-rows: repeat(10,auto);
+	grid-template-areas: "titulo"
+						"subtitulo1"
+						"buscar"
+						"subtitulo2"
+						"datos"
+						"subtitulo3"
+						"sintomas"
+						"subtitulo4"
+						"inmunizaciones"
+						"registrar";
+}
+
+/*Se modifica el titulo REGISTRAR*/
+.grid .main .titulo{
+	grid-area: titulo;
+	background: #222f3e;
+	text-align: center;
+	height: 90px;
+	display: flex;
+	align-items: center;
+	justify-content: center; 
+	padding: 10px;
+	margin-top: 60px;
+	font-size: 30px;
+	letter-spacing: 40px;
+}
+
+/*Se modifica los subtitulos buscar paciente,datos del paciente,sintomas e inmunizaciones*/
+.grid .main .subtitulo1,
+.grid .main .subtitulo2,
+.grid .main .subtitulo3,
+.grid .main .subtitulo4{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 60px;
+	background:#2c3e50;
+}
+/*Se le agregan las areas a los subtitulos buscar paciente,datos del paciente,sintomas e inmunizaciones*/
+.grid .main .subtitulo1{
+	grid-area: subtitulo1;
+}
+
+.grid .main .subtitulo2{
+	grid-area: subtitulo2;
+}
+
+.grid .main .subtitulo3{
+	grid-area: subtitulo3;
+}
+
+.grid .main .subtitulo4{
+	grid-area: subtitulo4;
+}
+/*Se asigna areas para el contenido del formulario buscar, datos del paciente,sintomas, inmunizaciones*/
+.grid .main .buscar{
+	grid-area: buscar;
+	position: relative;
+}
+
+.grid .main .datos{
+	grid-area: datos;
+	position: relative;
+}
+
+.grid .main .sintomas{
+	grid-area: sintomas;
+	position: relative;
+}
+
+.grid .main .inmunizaciones{
+	grid-area: inmunizaciones;
+	position: relative;
+}
+
+
+.grid .main .registrar{
+	grid-area: registrar;
+	position: relative;
+}
+
+/*Se modifica el contenido del formulario buscar, datos del paciente,sintomas, inmunizaciones*/
+.grid .main .buscar .form,
+.grid .main .datos .form,
+.grid .main .sintomas .form,
+.grid .main .inmunizaciones .form{
+	position: relative;
+	resize: none;
+	font-size: 18px;
+	font-weight: 300;
+	color: #333;
+	padding-left: 160px;
+	border:none;
+	outline: none;
+	padding-top: 30px;
+	background:#fff;
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+}
+
+/*Se divide formulario buscar, datos del paciente,sintomas, inmunizaciones para almacenar los datos*/
+.grid .main .datos .form,
+.grid .main .inmunizaciones .form{
+	grid-template-rows: repeat(7,110px);
+}
+
+.grid .main .sintomas .form{
+	grid-template-rows: repeat(6,80px);
+}
+/*Cada div que contiene un input se tiene clase box, aqui se modifican los box*/
+.grid .main .buscar .form .box,
+.grid .main .datos .form .box,
+.grid .main .sintomas .form .box,
+.grid .main .inmunizaciones .form .box{
+	position: relative;
+	width: 80%;
+	margin: 0 0 35px 0;
+}
+
+/*boxb son los div que contienen botones*/
+.grid .main .buscar .form .boxb{
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	width: 50%;
+	height: 100%;
+}
+
+.grid .main .datos .form .boxb,
+.grid .main .sintomas .form .boxb,
+.grid .main .inmunizaciones .form .boxb{
+	grid-column: span 2;
+	display: flex;
+	justify-content: center;
+	margin-top:30px;
+}
+
+/*Se modifica los titulos que estan dentro de inmunizaciones llamados Primera dosis ,Segunda dosis*/
+.grid .main .inmunizaciones .form .titulo1,
+.grid .main .inmunizaciones .form .titulo2{
+	grid-column: span 2;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	font-size: 18px;
+	font-weight: 300;
+	color: #333;
+	border-bottom: 1px solid #777;
+}
+
+/*Se modifica las letras que van arriba del input, es decir los dni,primer nombre, segundo nombre, etc*/
+.grid .main .buscar .form .box label,
+.grid .main .datos .form .box label,
+.grid .main .inmunizaciones .form .box label{
+	color: #333;
+	display: block;
+  	margin: .5em 0 0 0;
+  	font-size: 20px;
+}
+
+/*Se modifica las casillas de input y text area*/
+.grid .main .buscar .form .box input,
+.grid .main .datos .form .box input,
+.grid .main .sintomas .form .box textarea,
+.grid .main .inmunizaciones .form .box input,
+.form .box .select{
+	width: 100%;
+	margin-top: 10px;
+	padding: 5px 0;
+	font-size: 18px;
+	font-weight: 300;
+	color: #333;
+	border:none;
+	border-bottom: 1px solid #777;
+	outline: none;
+}
+
+select:focus:valid,
+input:focus:valid{
+	background:#32ff7e;
+	border-radius: 5px; 
+}
+
+
+/*Aqui se modifican los botones*/
+.datos .form .boxb button,
+.sintomas .form .boxb button,
+.inmunizaciones .form .boxb button{
+		height: 60px;
+		width: 100px;
+		margin: 0 0 17px 0;
+		border-radius: 10px;
+}
+
+.buscar .form .boxb button{
+		position: relative;
+		height: 40px;
+		width: 60px;
+		margin: 0 0 16px 0;
+		border-radius: 10px;
+	}
+
+.boxb button:hover{
+	background:#0984e3; 
+}
+
+
+@media screen and (max-width: 768px){
+
+	/*Se elimina SIMINSA del header para acortar espacio*/
+	.grid .header .logo3{
+		display: none;
+	}
+
+	.grid .main .titulo{
+		font-size: 20px;
+		letter-spacing: 0px;
+	}
+
+	.grid .main .buscar .form,
+	.grid .main .datos .form,
+	.grid .main .sintomas .form,
+	.grid .main .inmunizaciones .form{
+	padding-left: 10px;
+	padding-top: 30px;
+	display: grid;
+	}
+
+	.grid .main .buscar .form{
+		display: block;
+	}
+	.grid .main .datos .form,
+	.grid .main .inmunizaciones .form{
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(13,110px);
+		display: block;
+	}
+
+	.grid .main .sintomas .form{
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(9,80px);
+		display: block;
+	}
+}	
