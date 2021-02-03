@@ -37,4 +37,10 @@ def create_app():
         global apellido
         return render_template("inicio.html", nombre=nombre, apellido=apellido)
 
+    @app.route("/registrar/", methods=["GET", "POST"])
+    def registrar():
+        global nombre
+        global apellido
+        return render_template("Registrar.html", nombre=nombre, apellido=apellido)
+
     return app
