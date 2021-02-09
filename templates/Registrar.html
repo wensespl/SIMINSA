@@ -37,9 +37,9 @@
 							<span class="nav__name">Registrar</span>
 							<ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
 							<ul class="collapse__menu">
-								<a href="#" class="collapse__sublink">Datos</a>
-								<a href="#" class="collapse__sublink">Síntomas</a>
-								<a href="#" class="collapse__sublink">Inmunizaciones</a>
+								<a href="#datos" class="collapse__sublink">Datos</a>
+								<a href="#sintomas" class="collapse__sublink">Síntomas</a>
+								<a href="#inmunizaciones" class="collapse__sublink">Inmunizaciones</a>
 							</ul>
 						</div>
 						<div class="nav__link collapse">
@@ -78,21 +78,21 @@
 				<h2>Buscar paciente</h2>
 			</div>
 			<div class="buscar">
-				<form class="form" action="javascript:void();">
+				<form class="form" method="POST">
 					<div class="box dni">
 						<label>DNI</label>
-						<input type="text" name="dni" required="" pattern="[0-9]{8}" title="Debe poner 8 números">
+						<input type="text" name="dnibuscar" required="" pattern="[0-9]{8}" title="Debe poner 8 números">
 					</div>
 					<div class="boxb buscarb">
 						<button type="submit">buscar</button>
 					</div>
 				</form>
 			</div>
-			<div class="subtitulo2">
+			<div id="datos" class="subtitulo2">
 				<h2>Datos del paciente</h2>
 			</div>
 			<div class="datos">
-				<form class="form" action="javascript:void();">
+				<form class="form" method="POST">
 					<div class="box dni">
 						<label></label>DNI</label>
 						<input type="text" name="dni" required="" pattern="[0-9]{8}" title="Debe poner 8 números">
@@ -174,11 +174,11 @@
 					</div>
 				</form>
 			</div>
-			<div class="subtitulo3">
+			<div id="sintomas" class="subtitulo3">
 				<h2>Síntomas</h2>
 			</div>
 			<div class="sintomas">
-				<form class="form">
+				<form class="form" method="POST">
 					<div class="box op1">
 						<input type="checkbox" name="">
 						<label>Dificultad para respirar o sensación de falta de aire.</label>
@@ -212,11 +212,11 @@
 					</div>
 				</form>
 			</div>
-			<div class="subtitulo4">
+			<div id="inmunizaciones" class="subtitulo4">
 				<h2>Inmunizaciones</h2>
 			</div>
 			<div class="inmunizaciones">
-				<form class="form">
+				<form class="form" method="POST">
 					<div class="box titulo1">
 						<h3>Primera dosis</h3>
 					</div>
@@ -241,7 +241,7 @@
 							<option value="" disabled selected>
 								<!-- Choose your option -->
 							</option>
-							<option value="1">Sinpharm</option>
+							<option value="1">Sinopharm</option>
 							<option value="2">Pfizer</option>
 						</select>
 					</div>
@@ -269,7 +269,7 @@
 							<option value="" disabled selected>
 								<!-- Choose your option -->
 							</option>
-							<option value="1">Sinpharm</option>
+							<option value="1">Sinopharm</option>
 							<option value="2">Pfizer</option>
 						</select>
 					</div>
