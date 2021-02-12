@@ -230,6 +230,7 @@ body{
 }
 
 .grid .main .formulario{
+	background: #fff;
 	grid-area: formulario;
 	display: grid;
 	grid-template-columns: minmax(200px,100%);
@@ -399,7 +400,6 @@ body{
 /*Se modifica las casillas de input y text area*/
 .grid .main .buscar .form .box input,
 .grid .main .datos .form .box input,
-.grid .main .sintomas .form .box textarea,
 .grid .main .inmunizaciones .form .box input,
 .form .box .select{
 	width: 100%;
@@ -412,6 +412,19 @@ body{
 	border-bottom: 1px solid #777;
 	outline: none;
 }
+
+.grid .main .sintomas .form .box #otros{
+	width: 300px;
+	margin-top: 10px;
+	padding: 5px 0;
+	font-size: 18px;
+	color: #333;
+	border:none;
+	border-bottom: 1px solid #777;
+	outline: none;
+
+}
+
 
 select:focus:valid,
 input:focus:valid{
@@ -454,18 +467,6 @@ input:focus:valid{
 .buscar .buscarb input:focus{
 	background: #3498db;
 }
-
-
-/*
-		height: 60px;
-		width: 100px;
-		margin: 0 0 17px 0;
-		border-radius: 10px;*/
-
-/*.boxb button:hover{
-	background:#0984e3; 
-}
-*/
 
 @media screen and (max-width: 768px){
 
