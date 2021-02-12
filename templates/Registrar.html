@@ -115,6 +115,15 @@
 							<label>Apellido materno</label>
 							<input type="text" name="apellido2" value="{{apellido2_p}}" required="">
 						</div>
+						<div class="box estado">
+							<label>Estado del paciente</label>	
+
+							<select class="select estado" name="option">
+    							<option value="" disabled selected><!-- Choose your option --></option>
+   								<option value="1">Estable</option>
+    							<option value="2">Grave</option>
+    						</select>	
+						</div>
 						<div class="box genero">
 							<label>Género</label>
 							<select class="select genero" name="genero">
@@ -206,7 +215,7 @@
 							<label>Tos seca.</label>
 						</div>
 						<div class="box op8">
-							<textarea name="otros" placeholder="Otros"></textarea>
+							<input type="text" id="otros" name="otros" placeholder="Otros">
 						</div>
 					</div>
 				</div>
