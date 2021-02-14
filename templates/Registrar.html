@@ -116,13 +116,12 @@
 							<input type="text" name="apellido2" value="{{apellido2_p}}" required="">
 						</div>
 						<div class="box estado">
-							<label>Estado del paciente</label>	
-
-							<select class="select estado" name="option">
-    							<option value="" disabled selected><!-- Choose your option --></option>
-   								<option value="1">Estable</option>
-    							<option value="2">Grave</option>
-    						</select>	
+							<label>Estado del paciente</label>
+							<select class="select estado" name="estadop">
+								<option value="" disabled selected><!-- Choose your option --></option>
+								<option value="Estable" {{est1_p}}>Estable</option>
+								<option value="Grave" {{est2_p}}>Grave</option>
+							</select>
 						</div>
 						<div class="box genero">
 							<label>Género</label>
@@ -187,35 +186,35 @@
 				<div class="sintomas">
 					<div class="form">
 						<div class="box op1">
-							<input type="checkbox" name="s1" value="{{s1_p}}">
+							<input type="checkbox" name="s1" {{s1_p}}>
 							<label>Dificultad para respirar o sensación de falta de aire.</label>
 						</div>
 						<div class="box op2">
-							<input type="checkbox" name="s2" value="{{s2_p}}">
+							<input type="checkbox" name="s2" {{s2_p}}>
 							<label>Dolor o presión en el pecho.</label>
 						</div>
 						<div class="box op3">
-							<input type="checkbox" name="s3" value="{{s3_p}}">
+							<input type="checkbox" name="s3" {{s3_p}}>
 							<label>Cansancio.</label>
 						</div>
 						<div class="box op4">
-							<input type="checkbox" name="s4" value="{{s4_p}}">
+							<input type="checkbox" name="s4" {{s4_p}}>
 							<label>Incapacidad para hablar o moverse.</label>
 						</div>
 						<div class="box op5">
-							<input type="checkbox" name="s5" value="{{s5_p}}">
+							<input type="checkbox" name="s5" {{s5_p}}>
 							<label>Pérdida del sentido del olfato o del gusto.</label>
 						</div>
 						<div class="box op6">
-							<input type="checkbox" name="s6" value="{{s6_p}}">
+							<input type="checkbox" name="s6" {{s6_p}}>
 							<label>Fiebre.</label>
 						</div>
 						<div class="box op7">
-							<input type="checkbox" name="s7" value="{{s7_p}}">
+							<input type="checkbox" name="s7" {{s7_p}}>
 							<label>Tos seca.</label>
 						</div>
 						<div class="box op8">
-							<input type="text" id="otros" name="otros" placeholder="Otros">
+							<input type="text" id="otros" name="otros" value="{{otros_p}}" placeholder="Otros">
 						</div>
 					</div>
 				</div>
