@@ -115,10 +115,6 @@ def create_app():
         fv2 = ""
 
         if request.method == "POST":
-            """
-                if request.form.get("s1"):
-                    print("S1 checked")
-            """
             if(request.form['boton'] == 'Buscar'):
                 dnibuscar = request.form['dnibuscar']
                 if(DB.buscarPaciente(dnibuscar)):
@@ -128,7 +124,6 @@ def create_app():
                     inmunizaciones = DB.inmunizaciones.find_one({
                         "DNI": dnibuscar
                     })
-                    #mostrar datos obtenidos
                     dni_p = paciente['DNI']
                     nombre1_p = paciente['Nombre1']
                     nombre2_p = paciente['Nombre2']
@@ -230,8 +225,9 @@ def create_app():
                         estado6_v = "selected"
                     fv2 = inmunizaciones['FV2']
             else:
-                DB.guardarDatosPa(request.form)
-                return redirect("registrar/")
+                if(not DB.buscarPaciente(request.form['dni'])):
+                    DB.guardarDatosPa(request.form)
+                return redirect(url_for('registrar'))
         kwargs = {
             "dni_buscar": dni_buscar,
             "dni_p": dni_p,
