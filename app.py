@@ -229,6 +229,8 @@ def create_app():
                     DB.guardarDatosPa(request.form)
                 return redirect(url_for('registrar'))
         kwargs = {
+            "nombre": nombre,
+            "apellido": apellido,
             "dni_buscar": dni_buscar,
             "dni_p": dni_p,
             "nombre1_p": nombre1_p,
