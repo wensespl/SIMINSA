@@ -38,6 +38,7 @@
                             <span class="nav__name">Registrar</span>
                             <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
                             <ul class="collapse__menu">
+                            	<a href="#" class="collapse__sublink">Buscar</a>
                                 <a href="#" class="collapse__sublink">Datos</a>
                                 <a href="#" class="collapse__sublink">Síntomas</a>
                                 <a href="#" class="collapse__sublink">Inmunizaciones</a>
@@ -69,7 +70,6 @@
         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
         <!-- archivo java script -->
         <script src="{{url_for('static', filename='javaScript/jsRegistrar.js')}}"></script>
-
 
 		<main class="main">
 			<div class="titulo">
@@ -227,7 +227,7 @@
 							<h3>Primera dosis</h3>
 						</div>
 						<div class="box estado1">
-							<label>Estado</label>
+							<label>Estado de la vacuna</label>
 							<select class="select estado1" name="estado_vacuna1">
 								<option value="" disabled selected><!-- Choose your option --></option>
 								<option value="Recibida" {{estado1_v}}>Recibida</option>
@@ -251,7 +251,7 @@
 							<h3>Segunda dosis</h3>
 						</div>
 						<div class="box estado2">
-							<label>Estado</label>
+							<label>Estado de la vacuna</label>
 							<select class="select estado2" name="estado_vacuna2">
 								<option value="" disabled selected><!-- Choose your option --></option>
 								<option value="Recibida" {{estado4_v}}>Recibida</option>
