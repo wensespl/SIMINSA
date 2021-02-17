@@ -18,6 +18,15 @@ def load_user_data(usuario, contraseña):
     apellido = user["Apellidos"]
     tipe = user["Tipe"]
 
+def clear_user_data():
+    global nombre
+    global apellido
+    global tipe
+
+    nombre = ""
+    apellido = ""
+    tipe = ""
+
 def create_app():
     global nombre
     global apellido
@@ -35,8 +44,15 @@ def create_app():
                 return redirect("home/")
         return render_template("index.html")
 
+    @app.route("/logout/")
+    def logout():
+        clear_user_data()
+        return redirect(url_for('index'))
+
     @app.route("/home/")
     def home():
+        if(nombre == ""):
+            return redirect(url_for('index'))
         if tipe == "UM":
             registrar = url_for('registrar')
             monitorear = url_for('home')
@@ -56,6 +72,8 @@ def create_app():
 
     @app.route("/registrar/", methods=["GET", "POST"])
     def registrar():
+        if(nombre == ""):
+            return redirect(url_for('index'))
         dni_buscar = ""
         dni_p = ""
         nombre1_p = ""
@@ -113,7 +131,14 @@ def create_app():
         estado5_v = ""
         estado6_v = ""
         fv2 = ""
-
+        if tipe == "UM":
+            registrar = url_for('registrar')
+            monitorear = url_for('home')
+            prevenir = url_for('registrar')
+        else:
+            registrar = url_for('home')
+            monitorear = url_for('registrar')
+            prevenir = url_for('home')
         if request.method == "POST":
             if(request.form['boton'] == 'Buscar'):
                 dnibuscar = request.form['dnibuscar']
@@ -288,6 +313,9 @@ def create_app():
             "estado5_v": estado5_v,
             "estado6_v": estado6_v,
             "fv2": fv2,
+            "registrar": registrar,
+            "monitorear": monitorear,
+            "prevenir": prevenir
         }
         return render_template("Registrar.html", **kwargs)
 

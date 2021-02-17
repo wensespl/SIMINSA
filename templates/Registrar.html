@@ -35,10 +35,10 @@
                     <div class="nav__list">
 						<div  class="nav__link collapse">
                             <img src="{{url_for('static', filename='images/icono1.png')}}">
-                            <span class="nav__name">Registrar</span>
+                            <a href="{{registrar}}" class="nav__name">Registrar</a>
                             <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
                             <ul class="collapse__menu">
-                            	<a href="#" class="collapse__sublink">Buscar</a>
+								<a href="#" class="collapse__sublink">Buscar</a>
                                 <a href="#" class="collapse__sublink">Datos</a>
                                 <a href="#" class="collapse__sublink">Síntomas</a>
                                 <a href="#" class="collapse__sublink">Inmunizaciones</a>
@@ -46,7 +46,7 @@
                         </div>
                         <div class="nav__link collapse">
                             <img src="{{url_for('static', filename='images/icono2.png')}}">
-                            <span class="nav__name">Monitorear</span>
+                            <a href="{{monitorear}}" class="nav__name">Monitorear</a>
                             <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
                             <ul class="collapse__menu">
                                 <a href="#" class="collapse__sublink">Buscar</a>
@@ -56,13 +56,13 @@
                         </div>
                         <div href="#" class="nav__link">
 							<img src="{{url_for('static', filename='images/icono3.png')}}">
-                            <span class="nav__name">Prevenir</span>
+                            <a href="{{prevenir}}" class="nav__name">Prevenir</a>
                         </div>
                     </div>
                 </div>
                 <div href="#" class="nav__link">
                     <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
-                    <span class="nav__name">Cerrar sesión</span>
+                    <a href="{{url_for('logout')}}" class="nav__name">Cerrar sesión</a>
                 </div>
             </nav>
         </div>
