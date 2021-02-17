@@ -87,7 +87,8 @@ body{
 /*Centrar los elementos*/
 .grid .nav .registrar,
 .grid .nav .monitorear,
-.grid .nav .prevenir{
+.grid .nav .prevenir,
+.grid .nav .cerrar_sesion{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -96,26 +97,30 @@ body{
 }
 
 .grid .nav .registrar{
-	grid-column: 6/7;
+	grid-column: 5/6;
 }
 
-.grid .nav .registrar:hover,.grid .nav .monitorear:hover,.grid .nav .prevenir:hover{
+.grid .nav .registrar:hover,.grid .nav .monitorear:hover,.grid .nav .prevenir:hover,.grid .nav .cerrar_sesion:hover{
 	background-color: #2F3B49;
 	border-radius: 30px ;
 }
 
 .grid .nav .monitorear{
-	grid-column: 7/8;
+	grid-column: 6/7;
 }
 
 .grid .nav .prevenir{
+	grid-column: 7/8;
+}
+.grid .nav .cerrar_sesion{
 	grid-column: 8/9;
 }
 
 /*Se le quita el formato a los links*/
 .grid .nav .registrar a,
 .grid .nav .monitorear a,
-.grid .nav .prevenir a{
+.grid .nav .prevenir a,
+.grid .nav .cerrar_sesion a{
 	text-decoration: none;
 	color: #fff;
 	font-size: 18px;
