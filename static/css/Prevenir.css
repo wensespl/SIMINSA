@@ -265,17 +265,17 @@ input:focus:valid{
 }
 
 /*Aqui modifico la tabla*/
-.grid .tablepre{
+.grid .tablapre{
 	/*align-items: center;*/
 	/*justify-content: center;*/
 	grid-area: tabla;
-/*	height: 100px;
+	height: 100px;
 	margin: 300px;
 	width: 800px;
-	margin-top: 1px;*/
+	margin-top: 1px;
 
 }
-.tablepre{
+.tablapre{
 
 	background-color: white;
 	text-align: left;
