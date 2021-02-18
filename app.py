@@ -56,10 +56,10 @@ def create_app():
         if tipe == "UM":
             registrar = url_for('registrar')
             monitorear = url_for('home')
-            prevenir = url_for('registrar')
+            prevenir = url_for('prevenir')
         else:
             registrar = url_for('home')
-            monitorear = url_for('registrar')
+            monitorear = url_for('monitorear')
             prevenir = url_for('home')
         kwargs = {
             "nombre": nombre,
@@ -137,7 +137,7 @@ def create_app():
             prevenir = url_for('prevenir')
         else:
             registrar = url_for('home')
-            monitorear = url_for('registrar')
+            monitorear = url_for('monitorear')
             prevenir = url_for('home')
         if request.method == "POST":
             if(request.form['boton'] == 'Buscar'):
@@ -329,8 +329,13 @@ def create_app():
             prevenir = url_for('prevenir')
         else:
             registrar = url_for('home')
-            monitorear = url_for('registrar')
+            monitorear = url_for('monitorear')
             prevenir = url_for('home')
+
+        pag = DB.pacientes.find({})
+        for x in pag:
+            if(x['EstPa'] == "Grave"):
+                print(x)
         kwargs = {
             "nombre": nombre,
             "apellido": apellido,
@@ -350,14 +355,120 @@ def create_app():
             prevenir = url_for('prevenir')
         else:
             registrar = url_for('home')
-            monitorear = url_for('registrar')
+            monitorear = url_for('monitorear')
             prevenir = url_for('home')
+        dni_buscar = ""
+        estado_buscar = ""
+        nombresapellidos_p = ""
+        direccion_p = ""
+        M = ""
+        F = ""
+        telf_p = ""
+        fechana_p = ""
+        estado_p = ""
+        s1_p = ""
+        s2_p = ""
+        s3_p = ""
+        s4_p = ""
+        s5_p = ""
+        s6_p = ""
+        s7_p = ""
+        otros_p = ""
+        estado1_v = ""
+        estado2_v = ""
+        estado3_v = ""
+        fv1 = ""
+        estado4_v = ""
+        estado5_v = ""
+        estado6_v = ""
+        fv2 = ""
+        if request.method == "POST":
+            if(request.form['boton'] == 'Buscar'):
+                dni_buscar = request.form['dnibuscar']
+                est_buscar = request.form['estadobuscar']
+                if(DB.buscarPacienteEstado(dni_buscar, est_buscar)):
+                    paciente = DB.pacientes.find_one({
+                        "DNI": dni_buscar
+                        })
+                    inmunizaciones = DB.inmunizaciones.find_one({
+                        "DNI": dni_buscar
+                        })
+                    nombresapellidos_p = paciente['Nombre1']+" "+paciente['Nombre2']+" "+paciente['Apellido1']+" "+paciente['Apellido2']
+                    direccion_p = paciente['Dep']+","+paciente['Dist']+","+paciente['Calle']
+                    if(paciente['Genero'] == "Masculino"):
+                        M = "selected"
+                    else:
+                        F = "selected"
+                    telf_p = paciente['Telf']
+                    fechana_p = paciente['FN']
+                    estado_p = paciente['EstPa']
+                    if(paciente['Sintomas']['s1'] == "on"):
+                        s1_p = "checked"
+                    if(paciente['Sintomas']['s2'] == "on"):
+                        s2_p = "checked"
+                    if(paciente['Sintomas']['s3'] == "on"):
+                        s3_p = "checked"
+                    if(paciente['Sintomas']['s4'] == "on"):
+                        s4_p = "checked"
+                    if(paciente['Sintomas']['s5'] == "on"):
+                        s5_p = "checked"
+                    if(paciente['Sintomas']['s6'] == "on"):
+                        s6_p = "checked"
+                    if(paciente['Sintomas']['s7'] == "on"):
+                        s7_p = "checked"
+                    otros_p = paciente['Otros']
+                    if(inmunizaciones['EV1'] == "Recibida"):
+                        estado1_v = "selected"
+                    elif(inmunizaciones['EV1'] == "No recibida"):
+                        estado2_v = "selected"
+                    else:
+                        estado3_v = "selected"
+                    fv1 = inmunizaciones['FV1']
+                    if(inmunizaciones['EV2'] == "Recibida"):
+                        estado4_v = "selected"
+                    elif(inmunizaciones['EV2'] == "No recibida"):
+                        estado5_v = "selected"
+                    else:
+                        estado6_v = "selected"
+                    fv2 = inmunizaciones['FV2']
+            else:
+                DB.guardarDatosMo(request.form)
+                return redirect(url_for('monitorear'))
+        '''
+        pag = DB.pacientes.find({
+                "EstPa": "Grave"
+                })
+        print(pag)
+        '''
         kwargs = {
             "nombre": nombre,
             "apellido": apellido,
             "registrar": registrar,
             "monitorear": monitorear,
-            "prevenir": prevenir
+            "prevenir": prevenir,
+            "nombresapellidos_p": nombresapellidos_p,
+            "direccion_p": direccion_p,
+            "M": M,
+            "F": F,
+            "telf_p": telf_p,
+            "fechana_p": fechana_p,
+            "estado_p": estado_p,
+            "s1_p": s1_p,
+            "s2_p": s2_p,
+            "s3_p": s3_p,
+            "s4_p": s4_p,
+            "s5_p": s5_p,
+            "s6_p": s6_p,
+            "s7_p": s7_p,
+            "otros_p": otros_p,
+            "estado1_v": estado1_v,
+            "estado2_v": estado2_v,
+            "estado3_v": estado3_v,
+            "fv1": fv1,
+            "estado4_v": estado4_v,
+            "estado5_v": estado5_v,
+            "estado6_v": estado6_v,
+            "fv2": fv2,
         }
         return render_template("Monitorear.html", **kwargs)
 

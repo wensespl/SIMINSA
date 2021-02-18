@@ -9,6 +9,7 @@ db = client.SIMINSADB
 usuarios = db.Usuarios
 pacientes = db.Pacientes
 inmunizaciones = db.Inmunizaciones
+reportes = db.Reportes
 
 def validate(user, contraseña):
     if(usuarios.find_one({"ID": user, "Contraseña": contraseña})):
@@ -17,6 +18,14 @@ def validate(user, contraseña):
 
 def buscarPaciente(dni):
     if(pacientes.find_one({"DNI": dni})):
+        return True
+    return False
+
+def buscarPacienteEstado(dni, est):
+    if(est == ""):
+        if(pacientes.find_one({"DNI": dni})):
+            return True
+    if(pacientes.find_one({"DNI": dni, "EstPa": est})):
         return True
     return False
 
@@ -67,4 +76,9 @@ def guardarDatosPa(datos):
         "Lab": datos['lab1'],
         "FV2": datos['fecha_vacuna2'],
         "EV2": datos['estado_vacuna2'],
+    })
+
+def guardarDatosMo(datos):
+    reportes.insert_one({
+        "Rep": datos['rep_d']
     })

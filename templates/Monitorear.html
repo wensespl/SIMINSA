@@ -25,7 +25,7 @@
 				<h2>Usuario:{{nombre}} {{apellido}}</h2>
 			</div>
 		</header>
-	<div class="l-navbar" id="navbar">
+		<div class="l-navbar" id="navbar">
             <nav class="nav">
                 <div>
                     <div class="nav__brand">
@@ -35,7 +35,7 @@
                     <div class="nav__list">
 						<div  class="nav__link collapse">
                             <img src="../static/images/icono1.png">
-                            <span class="nav__name">Registrar</span>
+                            <a href="{{registrar}}" class="nav__name">Registrar</a>
                             <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
                             <ul class="collapse__menu">
                                 <a href="#" class="collapse__sublink">Datos</a>
@@ -45,7 +45,7 @@
                         </div>
                         <div class="nav__link collapse">
                             <img src="../static/images/icono2.png">
-                            <span class="nav__name">Monitorear</span>
+                            <a href="{{monitorear}}" class="nav__name">Monitorear</a>
                             <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
                             <ul class="collapse__menu">
                                 <a href="#" class="collapse__sublink">Buscar</a>
@@ -55,13 +55,13 @@
                         </div>
                         <div href="#" class="nav__link">
 							<img src="../static/images/icono3.png">
-                            <span class="nav__name">Prevenir</span>
+                            <a href="{{prevenir}}" class="nav__name">Prevenir</a>
                         </div>
                     </div>
                 </div>
                 <div href="#" class="nav__link">
                     <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
-                    <span class="nav__name">Cerrar sesión</span>
+                    <a href="{{url_for('logout')}}" class="nav__name">Cerrar sesión</a>
                 </div>
             </nav>
         </div>
@@ -86,7 +86,7 @@
                     </div>
                     <div class="box dni">
 						<label>Estado</label>
-						<input type="text" name="estadobuscar" value="{{estado_buscar}}" required="" pattern="[0-9]{8}" title="Debe poner 8 números">
+						<input type="text" name="estadobuscar" value="{{estado_buscar}}">
 					</div>
 					<div class="boxb buscarb" style="height: 100px;width: 185px;padding-left: 390px;">
 						<input type="submit" name="boton" value="Buscar"></input>
@@ -123,13 +123,10 @@
 							<label>Fecha de nacimiento</label>
 							<input type="date" name="fecha_nacimiento" value="{{fechana_p}}" required="">
 						</div>
-                        
                         <div class="box fecha">
 							<label>Estado</label>
 							<input type="text" name="estado" value="{{estado_p}}" required="">
 						</div>
-                        
-                        
 					</div>
 				</div>
 				<div class="subtitulo3">
@@ -207,19 +204,18 @@
 							<label>Fecha</label>
 							<input type="date" name="fecha_vacuna2" value="{{fv2}}">
 						</div>
-				
 					</div>
                 </div>
                 <div class="subtitulo5">
 					<h2>Reporte</h2>
 				</div>
-				<div class="reporte" style="height:180px;"> 
+				<div class="reporte" style="height:180px;">
 					<div class="form" style="height:150px">
-                        <textarea class="form-control" id="Reporte" rows="3" cols="150" style="height: 100px;width: 900px;"></textarea>
+                        <textarea class="form-control" id="Reporte" name="rep_d" rows="3" cols="150" style="height: 100px;width: 900px;"></textarea>
                     </div>
                 </div>
                 <div class="monitorear">
-					<input type="submit" name="boton" value="MONITOREAR"></input>
+					<input type="submit" name="boton" value="Actualizar"></input>
 				</div>
 			</form>
 		</main>
