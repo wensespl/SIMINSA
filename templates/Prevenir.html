@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SIMINSA</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estiloPrevenir.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Noto+Sans+JP:wght@500&family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<div class="grid">
+		<header class="header">
+			<div class="logo1">
+				<img src="{{url_for('static', filename='images/logo.png')}}">
+			</div>
+			<div class="logo2">
+				<h2>gob.pe</h2>
+			</div>
+			<div class="logo3">
+				<h2>SIMINSA</h2>
+			</div>
+			<div class="usuario">
+				<h2>Usuario:{{nombre}} {{apellido}}</h2>
+			</div>
+		</header>
+		<div class="l-navbar" id="navbar">
+            <nav class="nav">
+                <div>
+                    <div class="nav__brand">
+                        <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                        <h2>SIMINSA</h2>
+                    </div>
+                    <div class="nav__list">
+						<div  class="nav__link collapse">
+                            <img src="{{url_for('static', filename='images/icono1.png')}}">
+                            <a href="{{registrar}}" class="nav__name">Registrar</a>
+                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+                            <ul class="collapse__menu">
+								<a href="#" class="collapse__sublink">Buscar</a>
+                                <a href="#" class="collapse__sublink">Datos</a>
+                                <a href="#" class="collapse__sublink">Síntomas</a>
+                                <a href="#" class="collapse__sublink">Inmunizaciones</a>
+                            </ul>
+                        </div>
+                        <div class="nav__link collapse">
+                            <img src="{{url_for('static', filename='images/icono2.png')}}">
+                            <a href="{{monitorear}}" class="nav__name">Monitorear</a>
+                            <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+                            <ul class="collapse__menu">
+                                <a href="#" class="collapse__sublink">Buscar</a>
+                                <a href="#" class="collapse__sublink">Datos</a>
+                                <a href="#" class="collapse__sublink">Reporte</a>
+                            </ul>
+                        </div>
+                        <div href="#" class="nav__link">
+							<img src="{{url_for('static', filename='images/icono3.png')}}">
+                            <a href="{{prevenir}}" class="nav__name">Prevenir</a>
+                        </div>
+                    </div>
+                </div>
+                <div href="#" class="nav__link">
+                    <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                    <a href="{{url_for('logout')}}" class="nav__name">Cerrar sesión</a>
+                </div>
+            </nav>
+        </div>
+        <!-- ===== IONICONS ===== -->
+        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+        <!-- archivo java script -->
+        <script src="{{url_for('static', filename='javaScript/jsRegistrar.js')}}"></script>
+
+		<main class="main">
+			<div class="titulo">
+				<h1>PREVENIR</h1>
+			</div>
+			<div class="subtitulo">
+				<h2>Distritos en riesgo</h2>
+			</div>
+			<div class="tablaprev">
+				<table>
+			<thead>
+				<tr>
+					<th>Distritos</th>
+
+    			<th>Número de infectados</th>
+
+    			<th>% infección</th>
+
+			    <th>Número de fallecidos</th>
+
+   				 <th>Tasa de mortalidad</th>
+
+    			<th>Nivel de gravedad</th>
+				</tr>
+			</thead>
+			<tr>
+				<td>Dist 1</td>
+
+			    <td>Num infec 1</td>
+
+			    <td>% infec 1</td>
+		    
+			    <td>Num falle 1</td>
+		    
+			    <td>Tasa de mort 1</td>
+
+			    <td>Nivel de grav 1</td>
+			</tr>
+			<tr>
+				<td>Dist 2</td>
+
+			    <td>Num infec 2</td>
+
+			    <td>% infec 2</td>
+		    
+			    <td>Num falle 2</td>
+		    
+			    <td>Tasa de mort 2</td>
+
+			    <td>Nivel de grav 2</td>
+			</tr>
+			<tr>
+				<td>Dist 3</td>
+
+			    <td>Num infec 3</td>
+
+			    <td>% infec 3</td>
+		    
+			    <td>Num falle 3</td>
+		    
+			    <td>Tasa de mort 3</td>
+
+			    <td>Nivel de grav 3</td>
+			</tr>
+			<tr>
+				<td>Dist 3</td>
+
+			    <td>Num infec 3</td>
+
+			    <td>% infec 3</td>
+		    
+			    <td>Num falle 3</td>
+		    
+			    <td>Tasa de mort 3</td>
+
+			    <td>Nivel de grav 3</td>
+
+			</tr>
+			<tr>
+				<td>Dist 4</td>
+
+			    <td>Num infec 4</td>
+
+			    <td>% infec 4</td>
+		    
+			    <td>Num falle 4</td>
+		    
+			    <td>Tasa de mort 4</td>
+
+			    <td>Nivel de grav 4</td>
+			</tr>
+			<tr>
+				<td>Dist 5</td>
+
+			    <td>Num infec 5</td>
+
+			    <td>% infec 5</td>
+		    
+			    <td>Num falle 5</td>
+		    
+			    <td>Tasa de mort 5</td>
+
+			    <td>Nivel de grav 5</td>
+			</tr>
+		</table>
+			</div>
+		</main>
+	</div>
+</body>
+</html>
