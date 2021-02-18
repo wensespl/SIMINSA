@@ -148,7 +148,7 @@ def create_app():
                         })
                     inmunizaciones = DB.inmunizaciones.find_one({
                         "DNI": dnibuscar
-                    })
+                        })
                     dni_p = paciente['DNI']
                     nombre1_p = paciente['Nombre1']
                     nombre2_p = paciente['Nombre2']
@@ -331,7 +331,6 @@ def create_app():
             registrar = url_for('home')
             monitorear = url_for('monitorear')
             prevenir = url_for('home')
-
         pag = DB.pacientes.find({})
         for x in pag:
             if(x['EstPa'] == "Grave"):
@@ -434,12 +433,6 @@ def create_app():
             else:
                 DB.guardarDatosMo(request.form)
                 return redirect(url_for('monitorear'))
-        '''
-        pag = DB.pacientes.find({
-                "EstPa": "Grave"
-                })
-        print(pag)
-        '''
         kwargs = {
             "nombre": nombre,
             "apellido": apellido,
