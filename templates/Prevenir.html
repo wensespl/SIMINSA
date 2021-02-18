@@ -9,13 +9,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Noto+Sans+JP:wght@500&family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
 -->
 
-
 <link href="styles/Prevenir.css" rel="stylesheet" type="text/css">
-
-
-
-
-
 
 </head>
 <body>
@@ -34,7 +28,7 @@
 				<h2>Usuario:{{nombre}} {{apellido}}</h2>
 			</div>
 		</header>
-	<div class="l-navbar" id="navbar">
+		<div class="l-navbar" id="navbar">
             <nav class="nav">
                 <div>
                     <div class="nav__brand">
@@ -47,7 +41,7 @@
                             <span class="nav__name">Registrar</span>
                             <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
                             <ul class="collapse__menu">
-                            	<a href="#" class="collapse__sublink">Buscar</a>
+								<a href="#" class="collapse__sublink">Buscar</a>
                                 <a href="#" class="collapse__sublink">Datos</a>
                                 <a href="#" class="collapse__sublink">Síntomas</a>
                                 <a href="#" class="collapse__sublink">Inmunizaciones</a>
@@ -80,70 +74,59 @@
         <!-- archivo java script -->
         <script src="{{url_for('static', filename='javaScript/jsRegistrar.js')}}"></script>
 
-		
 	</div>
 
 
-	<div class="tablapre" > 
-	
+	<div class="tablapre" >
 		<table>
+			<thead>
+				<tr>
+					<th>Distritos</th>
 
-		 <thead>
+					<th>Número de infectados</th>
 
-		  <tr>
+					<th>% infección</th>
 
-    			<th>Distritos</th>
+					<th>Número de fallecidos</th>
 
-    			<th>Número de infectados</th>
+					<th>Tasa de mortalidad</th>
 
-    			<th>% infección</th>
+					<th>Nivel de gravedad</th>
+				</tr>
+			</thead>
+			<tr>
+				<td>Dist 1</td>
 
-			    <th>Número de fallecidos</th>
+				<td>Num infec 1</td>
 
-   				 <th>Tasa de mortalidad</th>
+				<td>% infec 1</td>
 
-    			<th>Nivel de gravedad</th>
+				<td>Num falle 1</td>
 
+				<td>Tasa de mort 1</td>
 
-  		  </tr>
-		</thead>
-		
-		  <tr>
+				<td>Nivel de grav 1</td>
+			</tr>
 
-		    	<td>Dist 1</td>
+			<tr>
 
-			    <td>Num infec 1</td>
+				<td>Dist 2</td>
 
-			    <td>% infec 1</td>
-		    
-			    <td>Num falle 1</td>
-		    
-			    <td>Tasa de mort 1</td>
+				<td>Num infec 2</td>
 
-			    <td>Nivel de grav 1</td>
+				<td>% infec 2</td>
 
+				<td>Num falle 2</td>
 
-		  </tr>
+				<td>Tasa de mort 2</td>
 
-		   <tr>
+				<td>Nivel de grav 2</td>
 
-			    <td>Dist 2</td>
+			</tr>
 
-			    <td>Num infec 2</td>
+			<tr>
 
-			    <td>% infec 2</td>
-		    
-			    <td>Num falle 2</td>
-		    
-			    <td>Tasa de mort 2</td>
-
-			    <td>Nivel de grav 2</td>
-
-		  </tr>
-
-		   <tr>
-
-			  	<td>Dist 3</td>
+				<td>Dist 3</td>
 
 			    <td>Num infec 3</td>
 
@@ -155,62 +138,57 @@
 
 			    <td>Nivel de grav 3</td>
 
-		  </tr>
+			</tr>
 
-		   <tr>
+			<tr>
 
-		    	<td>Dist 3</td>
+				<td>Dist 3</td>
 
-			    <td>Num infec 3</td>
+				<td>Num infec 3</td>
 
-			    <td>% infec 3</td>
-		    
-			    <td>Num falle 3</td>
-		    
-			    <td>Tasa de mort 3</td>
+				<td>% infec 3</td>
 
-			    <td>Nivel de grav 3</td>
+				<td>Num falle 3</td>
 
-		  </tr>
+				<td>Tasa de mort 3</td>
 
-		   <tr>
+				<td>Nivel de grav 3</td>
+
+			</tr>
+
+			<tr>
 
 			    <td>Dist 4</td>
 
 			    <td>Num infec 4</td>
 
 			    <td>% infec 4</td>
-		    
+
 			    <td>Num falle 4</td>
-		    
+
 			    <td>Tasa de mort 4</td>
 
 			    <td>Nivel de grav 4</td>
 
-		  </tr>
+			</tr>
 
-		   <tr>
+			<tr>
 
-			    <<td>Dist 5</td>
+			    <td>Dist 5</td>
 
 			    <td>Num infec 5</td>
 
 			    <td>% infec 5</td>
-		    
+
 			    <td>Num falle 5</td>
-		    
+
 			    <td>Tasa de mort 5</td>
 
 			    <td>Nivel de grav 5</td>
 
-		  </tr>
-
-  
+			</tr>
 
 		</table>
-
-
-</div>
-
+	</div>
 </body>
 </html>
