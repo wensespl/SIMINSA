@@ -321,6 +321,44 @@ def create_app():
 
     @app.route("/prevenir/", methods=["GET", "POST"])
     def prevenir():
-        return render_template("Prevenir.html")
+        if(nombre == ""):
+            return redirect(url_for('index'))
+        if tipe == "UM":
+            registrar = url_for('registrar')
+            monitorear = url_for('home')
+            prevenir = url_for('prevenir')
+        else:
+            registrar = url_for('home')
+            monitorear = url_for('registrar')
+            prevenir = url_for('home')
+        kwargs = {
+            "nombre": nombre,
+            "apellido": apellido,
+            "registrar": registrar,
+            "monitorear": monitorear,
+            "prevenir": prevenir
+        }
+        return render_template("Prevenir.html", **kwargs)
+
+    @app.route("/monitorear/", methods=["GET", "POST"])
+    def monitorear():
+        if(nombre == ""):
+            return redirect(url_for('index'))
+        if tipe == "UM":
+            registrar = url_for('registrar')
+            monitorear = url_for('home')
+            prevenir = url_for('prevenir')
+        else:
+            registrar = url_for('home')
+            monitorear = url_for('registrar')
+            prevenir = url_for('home')
+        kwargs = {
+            "nombre": nombre,
+            "apellido": apellido,
+            "registrar": registrar,
+            "monitorear": monitorear,
+            "prevenir": prevenir
+        }
+        return render_template("Monitorear.html", **kwargs)
 
     return app
