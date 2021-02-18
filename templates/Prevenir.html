@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Aquí puedes escribir tu comentario <title>SIMINSA</title>
+	<!-- Aquí puedes escribir tu comentario
+	<title>SIMINSA</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/estiloPrevenir.css')}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="styles/Prevenir.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Noto+Sans+JP:wght@500&family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
 -->
 
-<link href="styles/Prevenir.css" rel="stylesheet" type="text/css">
+<link href="{{url_for('static', filename='css/Prevenir.css')}}" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -38,7 +40,7 @@
                     <div class="nav__list">
 						<div  class="nav__link collapse">
                             <img src="{{url_for('static', filename='images/icono1.png')}}">
-                            <span class="nav__name">Registrar</span>
+                            <a href="{{registrar}}" class="nav__name">Registrar</a>
                             <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
                             <ul class="collapse__menu">
 								<a href="#" class="collapse__sublink">Buscar</a>
@@ -49,7 +51,7 @@
                         </div>
                         <div class="nav__link collapse">
                             <img src="{{url_for('static', filename='images/icono2.png')}}">
-                            <span class="nav__name">Monitorear</span>
+                            <a href="{{monitorear}}" class="nav__name">Monitorear</a>
                             <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
                             <ul class="collapse__menu">
                                 <a href="#" class="collapse__sublink">Buscar</a>
@@ -59,13 +61,13 @@
                         </div>
                         <div href="#" class="nav__link">
 							<img src="{{url_for('static', filename='images/icono3.png')}}">
-                            <span class="nav__name">Prevenir</span>
+                            <a href="{{prevenir}}" class="nav__name">Prevenir</a>
                         </div>
                     </div>
                 </div>
                 <div href="#" class="nav__link">
                     <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
-                    <span class="nav__name">Cerrar sesión</span>
+                    <a href="{{url_for('logout')}}" class="nav__name">Cerrar sesión</a>
                 </div>
             </nav>
         </div>
@@ -73,6 +75,120 @@
         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
         <!-- archivo java script -->
         <script src="{{url_for('static', filename='javaScript/jsRegistrar.js')}}"></script>
+
+		<div class="tablapre" >
+			<table>
+				<thead>
+					<tr>
+						<th>Distritos</th>
+	
+						<th>Número de infectados</th>
+	
+						<th>% infección</th>
+	
+						<th>Número de fallecidos</th>
+	
+						<th>Tasa de mortalidad</th>
+	
+						<th>Nivel de gravedad</th>
+					</tr>
+				</thead>
+				<tr>
+					<td>Dist 1</td>
+	
+					<td>Num infec 1</td>
+	
+					<td>% infec 1</td>
+	
+					<td>Num falle 1</td>
+	
+					<td>Tasa de mort 1</td>
+	
+					<td>Nivel de grav 1</td>
+				</tr>
+	
+				<tr>
+	
+					<td>Dist 2</td>
+	
+					<td>Num infec 2</td>
+	
+					<td>% infec 2</td>
+	
+					<td>Num falle 2</td>
+	
+					<td>Tasa de mort 2</td>
+	
+					<td>Nivel de grav 2</td>
+	
+				</tr>
+	
+				<tr>
+	
+					<td>Dist 3</td>
+	
+					<td>Num infec 3</td>
+	
+					<td>% infec 3</td>
+				
+					<td>Num falle 3</td>
+				
+					<td>Tasa de mort 3</td>
+	
+					<td>Nivel de grav 3</td>
+	
+				</tr>
+	
+				<tr>
+	
+					<td>Dist 3</td>
+	
+					<td>Num infec 3</td>
+	
+					<td>% infec 3</td>
+	
+					<td>Num falle 3</td>
+	
+					<td>Tasa de mort 3</td>
+	
+					<td>Nivel de grav 3</td>
+	
+				</tr>
+	
+				<tr>
+	
+					<td>Dist 4</td>
+	
+					<td>Num infec 4</td>
+	
+					<td>% infec 4</td>
+	
+					<td>Num falle 4</td>
+	
+					<td>Tasa de mort 4</td>
+	
+					<td>Nivel de grav 4</td>
+	
+				</tr>
+	
+				<tr>
+	
+					<td>Dist 5</td>
+	
+					<td>Num infec 5</td>
+	
+					<td>% infec 5</td>
+	
+					<td>Num falle 5</td>
+	
+					<td>Tasa de mort 5</td>
+	
+					<td>Nivel de grav 5</td>
+	
+				</tr>
+	
+			</table>
+		</div>
 
 	</div>
 
@@ -158,33 +274,33 @@
 
 			<tr>
 
-			    <td>Dist 4</td>
+				<td>Dist 4</td>
 
-			    <td>Num infec 4</td>
+				<td>Num infec 4</td>
 
-			    <td>% infec 4</td>
+				<td>% infec 4</td>
 
-			    <td>Num falle 4</td>
+				<td>Num falle 4</td>
 
-			    <td>Tasa de mort 4</td>
+				<td>Tasa de mort 4</td>
 
-			    <td>Nivel de grav 4</td>
+				<td>Nivel de grav 4</td>
 
 			</tr>
 
 			<tr>
 
-			    <td>Dist 5</td>
+				<td>Dist 5</td>
 
-			    <td>Num infec 5</td>
+				<td>Num infec 5</td>
 
-			    <td>% infec 5</td>
+				<td>% infec 5</td>
 
-			    <td>Num falle 5</td>
+				<td>Num falle 5</td>
 
-			    <td>Tasa de mort 5</td>
+				<td>Tasa de mort 5</td>
 
-			    <td>Nivel de grav 5</td>
+				<td>Nivel de grav 5</td>
 
 			</tr>
 
