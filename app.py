@@ -134,7 +134,7 @@ def create_app():
         if tipe == "UM":
             registrar = url_for('registrar')
             monitorear = url_for('home')
-            prevenir = url_for('registrar')
+            prevenir = url_for('prevenir')
         else:
             registrar = url_for('home')
             monitorear = url_for('registrar')
@@ -318,5 +318,9 @@ def create_app():
             "prevenir": prevenir
         }
         return render_template("Registrar.html", **kwargs)
+
+    @app.route("/prevenir/", methods=["GET", "POST"])
+    def prevenir():
+        return render_template("Prevenir.html")
 
     return app
