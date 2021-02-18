@@ -164,6 +164,8 @@ body{
 }
 .nav__name{
   font-size: var(--small-font-size);
+  text-decoration:none;
+  color: white; 
 }
 
 /*Expander menu*/
